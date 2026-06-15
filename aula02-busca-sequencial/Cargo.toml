@@ -1,0 +1,6 @@
+[package]
+name = "aula02_busca_sequencial"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

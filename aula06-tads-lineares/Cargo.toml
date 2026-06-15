@@ -1,0 +1,8 @@
+[package]
+name = "aula06_tads_lineares"
+version = "0.1.0"
+edition = "2021"
+
+# Atividade aula06 - TADs Lineares (Vec, Pilha, Fila, Deque).
+# Apenas biblioteca padrão (std): sem dependências externas.
+[dependencies]

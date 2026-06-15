@@ -1,0 +1,124 @@
+# Saída esperada (traçada manualmente - execute 'cargo run' para gerar a real).
+#
+# Esta é a saída ESPERADA de `cargo run`, traçada a partir do código (não há
+# compilador nesta máquina). Os exercícios ex14..ex20 são de outro autor; a saída
+# deles abaixo segue a especificação do brief e pode variar em detalhes de formatação.
+# As durações do ex17 dependem da máquina (são apenas ilustrativas).
+#
+# `cargo test` deve reportar: test result: ok. (todos os módulos têm testes)
+
+Atividade aula06 - TADs Lineares (Vec, Pilha, Fila, Deque)
+
+===== Exercício 01 - Inversão com Vec =====
+  original  = [1, 2, 3, 4, 5]
+  invertido = [5, 4, 3, 2, 1]
+
+===== Exercício 02 - Contador de ocorrências =====
+  frase = "banana"
+    'a' -> 3
+    'b' -> 1
+    'n' -> 2
+
+===== Exercício 03 - Remoção condicional (remover pares) =====
+  entrada = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  ímpares = [1, 3, 5, 7, 9]
+
+===== Exercício 04 - Mescla ordenada =====
+  a        = [1, 3, 5, 7]
+  b        = [2, 4, 6, 8, 10]
+  mesclado = [1, 2, 3, 4, 5, 6, 7, 8, 10]
+
+===== Exercício 05 - Calculadora RPN =====
+  "3 4 + 2 *" = Some(14.0)
+  "5 1 2 + 4 * + 3 -" = Some(14.0)
+  "3 +" = None (inválida)
+
+===== Exercício 06 - Histórico de navegação =====
+  atual           = Some("c.com")
+  voltar          = Some("b.com")
+  voltar          = Some("a.com")
+  avancar         = Some("b.com")
+  após visitar d, avancar = None
+
+===== Exercício 07 - Desfazer/Refazer =====
+  texto         = "Olá, mundo"
+  após desfazer = "Olá"
+  após refazer  = "Olá, mundo"
+  texto final   = "Olá, mundo!"
+
+===== Exercício 08 - Símbolos balanceados =====
+  balanceado("{[()]}") = true
+  balanceado("([)]") = false
+  balanceado("(((") = false
+  balanceado("a(b[c]{d})e") = true
+  balanceado("") = true
+
+===== Exercício 09 - Pilha com mínimo O(1) =====
+  vazia? true
+  push 5 -> min = Some(5)
+  push 3 -> min = Some(3)
+  push 7 -> min = Some(3)
+  push 2 -> min = Some(2)
+  push 8 -> min = Some(2)
+  pop Some(8) -> min = Some(2)
+  pop Some(2) -> min = Some(3)
+
+===== Exercício 10 - Simulador de fila de banco =====
+  intervalos   = [5, 4, 5, 5, 2, 5, 3, 4]
+  atendimentos = [3, 8, 5, 7, 6, 7, 3, 6]
+  tempo médio de espera = 6.00
+
+===== Exercício 11 - Impressora compartilhada =====
+  Imprimindo 'relatorio.pdf' (12 páginas)
+  Imprimindo 'foto.png' (1 páginas)
+  Imprimindo 'contrato.docx' (5 páginas)
+
+===== Exercício 12 - Buffer de mensagens (fila circular) =====
+  vazia? true (len = 0)
+  após inserir 1,2,3 = [1, 2, 3] (len = 3)
+  após inserir 4     = [2, 3, 4]
+  após inserir 5     = [3, 4, 5]
+
+===== Exercício 13 - Fila de prioridade manual =====
+  itens na fila = 4 (vazia? false)
+  ordem de remoção: 30 31 20 10
+
+===== Exercício 14 - Palíndromo com VecDeque =====
+  (saída do Autor B - conforme brief)
+  eh_palindromo("A man a plan a canal Panama") = true
+  eh_palindromo("rust") = false
+
+===== Exercício 15 - Janela deslizante máxima =====
+  (saída do Autor B - conforme brief)
+  v = [1, 3, -1, -3, 5, 3, 6, 7], k = 3
+  janela_maxima = [3, 3, 5, 5, 6, 7]
+
+===== Exercício 16 - Fila de tarefas com prioridade de frente =====
+  (saída do Autor B - conforme brief)
+  ordem de atendimento com urgente()/normal()/proxima()
+
+===== Exercício 17 - Comparação de desempenho (3 filas) =====
+  (saída do Autor B - conforme brief; durações ilustrativas/variam por máquina)
+  FilaVecIngenua (remove(0), O(n)) : ~X ms
+  VecDeque (amortizado O(1))       : ~Y ms
+  FilaCircular (O(1))              : ~Z ms
+
+===== Exercício 18 - Quando usar qual TAD? =====
+  (a) Ctrl+Z de um editor -> Pilha (LIFO)
+  (b) Pedidos de restaurante em ordem -> Fila (FIFO)
+  (c) Tags HTML bem formadas -> Pilha (aninhamento)
+  (d) Navegar diretório em largura (BFS) -> Fila (por níveis)
+  (e) Sequência é palíndromo -> Deque (duas pontas)
+
+===== Exercício 19 - Fila com iteração controlada (lotes) =====
+  (saída do Autor B - conforme brief)
+  processa a fila em lotes de tamanho fixo até esvaziar
+
+===== Exercício 20 - Round Robin (fila circular) =====
+  (saída do Autor B - conforme brief)
+  escalona 3 processos com quantum pequeno; imprime (nome, tempo_conclusao)
+
+Fim das demonstrações.
+
+# Nota: `cargo test` executa os testes de todos os módulos ex01..ex20 e deve
+# reportar algo como: `test result: ok. N passed; 0 failed`.

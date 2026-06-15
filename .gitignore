@@ -1,0 +1,13 @@
+# Rust
+/target/
+**/target/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editores / SO
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,6 @@
+[package]
+name = "aula04_reescrita_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

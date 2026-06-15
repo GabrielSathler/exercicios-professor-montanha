@@ -1,0 +1,61 @@
+# Saída esperada (traçada manualmente - execute 'cargo run' para gerar a real).
+
+== Exercicio 01 - Verificar primeiro - O(1) ==
+Primeiro de [10, 20, 30]: Some(10)
+Primeiro de []: None
+
+== Exercicio 02 - Somar lista - O(n) ==
+Soma de [1, 2, 3, 4, 5]: 15
+
+== Exercicio 03 - Busca binaria - O(log n) ==
+Buscar 7 em [1, 3, 5, 7, 9, 11]: Some(3)
+Buscar 4 em [1, 3, 5, 7, 9, 11]: None
+
+== Exercicio 04 - Pares com soma - O(n^2) ==
+Pares de [1, 2, 3, 4, 5] que somam 6:
+  (1, 5)
+  (2, 4)
+
+== Exercicio 05 - Imprimir elementos e pares - O(n^2) ==
+Elemento: 1
+Elemento: 2
+Elemento: 3
+Par: (1, 1)
+Par: (1, 2)
+Par: (1, 3)
+Par: (2, 1)
+Par: (2, 2)
+Par: (2, 3)
+Par: (3, 1)
+Par: (3, 2)
+Par: (3, 3)
+
+== Exercicio 06 - Potencias de dois - O(log n) ==
+Potencias de 2 menores que 100:
+  1
+  2
+  4
+  8
+  16
+  32
+  64
+
+== Exercicio 07 - Fibonacci - O(2^n) recursivo / O(n) iterativo ==
+fibonacci_recursivo(10) = 55
+fibonacci_iterativo(10) = 55
+
+== Exercicio 08 - Ordenacao bolha - O(n^2) ==
+Antes:  [5, 2, 9, 1, 5, 6]
+Depois: [1, 2, 5, 5, 6, 9]
+
+== Exercicio 09 - Produto de matrizes - O(n^3) ==
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+A x B = [[19, 22], [43, 50]]
+
+== Exercicio 10 - Merge sort - O(n log n) ==
+Antes:  [5, 2, 9, 1, 5, 6]
+Depois: [1, 2, 5, 5, 6, 9]
+
+# Nota: 'cargo test' deve reportar "test result: ok" para todos os módulos
+# (ex01 a ex10), sem falhas nem panics.

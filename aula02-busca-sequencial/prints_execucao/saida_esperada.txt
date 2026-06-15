@@ -1,0 +1,86 @@
+# Saída esperada (traçada manualmente - execute 'cargo run' para gerar a real).
+# Os tempos (campo "tempo = ...") variam a cada execução e dependem da máquina;
+# os valores abaixo são apenas ilustrativos. As posições e o número de operações,
+# porém, são determinísticos e devem bater exatamente.
+
+===========================================================
+  Aula 02 - Busca Sequencial: simples vs. interrompida
+===========================================================
+
+-----------------------------------------------------------
+Vetor de tamanho 1000
+-----------------------------------------------------------
+Cenário: início (alvo = 5)
+  Simples......: posição = índice 4        | operações =    1000 | tempo = 12.3µs
+  Interrompida.: posição = índice 4        | operações =       5 | tempo = 200ns
+
+Cenário: meio (alvo = 500)
+  Simples......: posição = índice 499      | operações =    1000 | tempo = 11.8µs
+  Interrompida.: posição = índice 499      | operações =     500 | tempo = 6.1µs
+
+Cenário: final (alvo = 1000)
+  Simples......: posição = índice 999      | operações =    1000 | tempo = 11.7µs
+  Interrompida.: posição = índice 999      | operações =    1000 | tempo = 11.6µs
+
+Cenário: inexistente (alvo = -1)
+  Simples......: posição = não encontrado  | operações =    1000 | tempo = 11.5µs
+  Interrompida.: posição = não encontrado  | operações =    1000 | tempo = 11.5µs
+
+-----------------------------------------------------------
+Vetor de tamanho 100000
+-----------------------------------------------------------
+Cenário: início (alvo = 5)
+  Simples......: posição = índice 4        | operações =  100000 | tempo = 1.05ms
+  Interrompida.: posição = índice 4        | operações =       5 | tempo = 220ns
+
+Cenário: meio (alvo = 50000)
+  Simples......: posição = índice 49999    | operações =  100000 | tempo = 1.02ms
+  Interrompida.: posição = índice 49999    | operações =   50000 | tempo = 520µs
+
+Cenário: final (alvo = 100000)
+  Simples......: posição = índice 99999    | operações =  100000 | tempo = 1.01ms
+  Interrompida.: posição = índice 99999    | operações =  100000 | tempo = 1.01ms
+
+Cenário: inexistente (alvo = -1)
+  Simples......: posição = não encontrado  | operações =  100000 | tempo = 1.00ms
+  Interrompida.: posição = não encontrado  | operações =  100000 | tempo = 1.00ms
+
+===========================================================
+  Exercícios Propostos (seção 9)
+===========================================================
+
+Exercício 1 - Busca em strings:
+  Procurando "uva" em ["maçã", "banana", "laranja", "uva", "manga"] -> índice 3 (operações = 4)
+  Procurando "kiwi" em ["maçã", "banana", "laranja", "uva", "manga"] -> não encontrado (operações = 5)
+
+Exercício 2 - Contar ocorrências:
+  O valor 2 aparece 4 vezes em [1, 2, 2, 3, 2, 4, 2, 5]
+
+Exercício 3 - Tabela tamanho x operações:
+   tamanho | posicao      |  ops_simples | ops_interrompida
+      1000 | inicio       |         1000 |                5
+      1000 | meio         |         1000 |              500
+      1000 | final        |         1000 |             1000
+      1000 | inexistente  |         1000 |             1000
+     10000 | inicio       |        10000 |                5
+     10000 | meio         |        10000 |             5000
+     10000 | final        |        10000 |            10000
+     10000 | inexistente  |        10000 |            10000
+    100000 | inicio       |       100000 |                5
+    100000 | meio         |       100000 |            50000
+    100000 | final        |       100000 |           100000
+    100000 | inexistente  |       100000 |           100000
+
+  CSV gravado em: prints_execucao/operacoes_por_tamanho.csv
+
+Exercício 4 - Todas as posições:
+  O valor 7 aparece nos índices [0, 2, 4, 6] de [7, 1, 7, 3, 7, 9, 7]
+
+Fim da demonstração. Execute 'cargo test' para validar os testes.
+
+# ----------------------------------------------------------------------------
+# 'cargo test' deve reportar algo como:
+#   running 10 tests
+#   test tests::busca_simples_encontra_e_conta_n_operacoes ... ok
+#   ... (demais testes) ...
+#   test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
